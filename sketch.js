@@ -3,7 +3,7 @@ const B = Matter.Bodies;
 const W = Matter.World;
 var engine, world;
 var box1, ground, bird, box2, box3, box4, box5, pig1, pig2, log1, log2, log3, log4;
-var bg;
+var bg, platform;
 
 
 
@@ -13,7 +13,8 @@ function setup() {
   world = engine.world; 
   //new keyword allocates memory for a new object.
   // whenever class name is used, it basically refers to constructor. Constructor is called to generate objects.
-  ground = new Ground()
+  ground = new Ground(800,390,1600,10)
+  platform = new Ground(200,285,300,200)
 
   box1 = new Box(900,360,70,70);
   box2 = new Box(1100,360,70,70);
@@ -42,6 +43,7 @@ function draw() {
   E.update(engine);
   // functions in classes are called using their object name
   ground.display()
+  platform.display()
 
   box1.display()
   box2.display()
